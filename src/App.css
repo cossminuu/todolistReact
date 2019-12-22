@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input[type="text"] {
+  font-family: "Roboto", sans-serif;
+  border: none;
+  outline: none;
+  border-bottom: solid 1px #dddddd;
+  transition-duration: 0.4s;
+}
+
+input[placeholder] {
+  opacity: 0.5;
+  font-style: italic;
+}
+
+input[type="text"]:focus {
+  border-bottom: solid 1px #38ef7d;
+  transition-duration: 0.4s;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-image: linear-gradient(
+    to top,
+    #3f51b1 0%,
+    #5a55ae 13%,
+    #7b5fac 25%,
+    #8f6aae 38%,
+    #a86aa4 50%,
+    #cc6b8e 62%,
+    #f18271 75%,
+    #f3a469 87%,
+    #f7c978 100%
+  );
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+/*Content*/
+/*--head*/
+.todolist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.todolist__main {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.75);
+  padding: 25px 0px;
+  border-radius: 20px;
+  width: 400px;
+}
+
+@media (max-width: 500px) {
+  .todolist__main {
+    border-radius: 0;
+    width: 100%;
+  }
+  .allTasks {
+    justify-content: center;
+    padding: 12px 0 12px 0 !important;
+    background-color: #eeeeee;
+    font-size: 12px;
+  }
+}
+
+.todolist__header {
+  padding: 0px 20px;
+}
+
+.todolist__header--date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.todolist__header--date span:nth-child(1) {
+  font-size: 48px;
+  color: #858585;
+  font-weight: 400;
+}
+
+.warpper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.warpper span:nth-child(1) {
+  font-size: 16px;
+  color: #858585;
+  font-weight: 500;
+}
+
+.warpper span:nth-child(2) {
+  font-size: 16px;
+  color: #858585;
+  font-weight: 300;
+}
+
+.add__input {
+  padding: 5px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.add__circle {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.fa-plus-circle {
+  font-size: 60px !important;
+  color: #00cebd;
+  transition-duration: 0.5s;
+}
+
+.fa-plus-circle:hover {
+  color: #11998e;
+  transition-duration: 0.5s;
+}
+
+/*--result*/
+/*fix size of task list*/
+.todolist__result {
+  overflow-y: scroll;
+  height: 300px;
+}
+
+/*overflow scroll without scrollbar*/
+.todolist__result::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.list__task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.list__task:hover {
+  border-left: solid 5px #38ef7d;
+  background-color: #eeeeee;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+}
+
+.list__task i {
+  font-size: 20px;
+}
+
+.list__task--check {
+  color: #aaaaaa;
+  transition-duration: 0.4s;
+}
+
+.list__task--text {
+  margin: 10px;
+  transition-duration: 0.4s;
+}
+
+.list__task--del {
+  color: #aaaaaa;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.fa-check-circle:hover {
+  color: #00881d;
+  transition-duration: 0.4s;
+}
+
+.fa-trash:hover {
+  color: rgb(228, 70, 70);
+  transition-duration: 0.4s;
+}
+
+/*ClassList Toggle : checked*/
+.list__task--checked {
+  color: #00881d;
+}
+
+.list__task--text--checked {
+  margin-left: 10px;
+  margin: 10px;
+  color: #aaaaaa;
+  text-decoration: line-through;
+  transition-duration: 0.4s;
+}
+
+.list-checked {
+  opacity: 0.7;
+  color: green;
+}
+
+.filterB {
+  font-weight: 600;
+  color: grey;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid grey;
+  transition: all 0.6s ease 0s;
+  cursor: pointer;
+}
+
+.filterB:hover {
+  color: black !important;
+  background: #00cebd;
+  border-color: transparent !important;
+  transition: all 0.6s ease 0s;
+}
+
+.filterA {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 80px 20px 80px;
+}
+
+.all,
+.completed,
+.active {
+  margin: 0px 30px 0 30px;
+  font-weight: 500;
+}
+
+.all {
+  color: black;
+}
+
+.completed span {
+  color: green;
+}
+
+.active span {
+  color: red;
+}
+
+.allTasks {
+  display: flex;
+  justify-content: center;
+  padding: 18px 0 18px 0;
+  background-color: #eeeeee;
+}
+
+.alltodo {
+  text-align: center;
+  padding-bottom: 5px;
+  color: #00cebd;
+}
